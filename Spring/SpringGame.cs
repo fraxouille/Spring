@@ -1,4 +1,4 @@
-﻿    #region Using Statements
+﻿#region Using Statements
 using System;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
@@ -11,27 +11,28 @@ using Microsoft.Xna.Framework.GamerServices;
 
 namespace Spring
 {
-    /// <summary>
-    /// This is the main type for your game
-    /// </summary>
+    public enum GameState
+    {
+        Menu, Game, Pause
+    };
+
     public class SpringGame : Game
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        public static GameState gameState;
+
 
         public SpringGame()
             : base()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            gameState = GameState.Menu;
         }
 
-        /// <summary>
-        /// Allows the game to perform any initialization it needs to before starting to run.
-        /// This is where it can query for any required services and load any non-graphic
-        /// related content.  Calling base.Initialize will enumerate through any components
-        /// and initialize them as well.
-        /// </summary>
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
@@ -39,51 +40,72 @@ namespace Spring
             base.Initialize();
         }
 
-        /// <summary>
-        /// LoadContent will be called once per game and is the place to load
-        /// all of your content.
-        /// </summary>
         protected override void LoadContent()
         {
-            // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            // TODO: use this.Content to load your game content here
+            Ressources.LoadContent(Content);
         }
 
-        /// <summary>
-        /// UnloadContent will be called once per game and is the place to unload
-        /// all content.
-        /// </summary>
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
+
         }
 
-        /// <summary>
-        /// Allows the game to run logic such as updating the world,
-        /// checking for collisions, gathering input, and playing audio.
-        /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
+            //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+                //Exit();
 
-            // TODO: Add your update logic here
+            switch (gameState)
+            {
+                case GameState.Menu:
+                    {
+                        //menuScreen.Update(mouseState, keyboardState, gamePadState);
+                        break;
+                    }
+                case GameState.Game:
+                    {
+                        //gameScreen.Update(mouseState, keyboardState, gamePadState);
+                        break;
+                    }
+                case GameState.Pause:
+                    {
+                        //pauseScreen.Update(mouseState, keyboardState, gamePadState);
+                        break;
+                    }
+            }
 
             base.Update(gameTime);
         }
 
-        /// <summary>
-        /// This is called when the game should draw itself.
-        /// </summary>
-        /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
+            spriteBatch.Begin();
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+
+            //spriteBatch.Draw(Ressources.playerTexture, new Rectangle(10, 10, 100, 100), Color.White);
+
+            switch (gameState)
+            {
+                case GameState.Menu:
+                    {
+                        //menuScreen.Draw(spriteBatch);
+                        break;
+                    }
+                case GameState.Game:
+                    {
+                        //gameScreen.Draw(spriteBatch);
+                        break;
+                    }
+                case GameState.Pause:
+                    {
+                        //pauseScreen.Draw(spriteBatch);
+                        break;
+                    }
+            }
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }
