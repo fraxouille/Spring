@@ -35,6 +35,9 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="GameScreen.cs" />
+    <Compile Include="MenuScreen.cs" />
+    <Compile Include="PauseScreen.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Ressources.cs" />

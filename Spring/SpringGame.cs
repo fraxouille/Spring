@@ -22,21 +22,23 @@ namespace Spring
         SpriteBatch spriteBatch;
 
         public static GameState gameState;
+        MenuScreen menuScreen;
+        GameScreen gameScreen;
+        PauseScreen pauseScreen;
+
+        MouseState mouseState;
+        KeyboardState keyboardState;
+        GamePadState gamePadState;
 
 
-        public SpringGame()
-            : base()
+        public SpringGame() : base()
         {
             graphics = new GraphicsDeviceManager(this);
-            Content.RootDirectory = "Content";
-
-            gameState = GameState.Menu;
+            //Content.RootDirectory = "Content";
         }
 
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-
             base.Initialize();
         }
 
@@ -44,6 +46,11 @@ namespace Spring
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
             Ressources.LoadContent(Content);
+
+            gameState = GameState.Pause;
+            menuScreen = new MenuScreen();
+            gameScreen = new GameScreen();
+            pauseScreen = new PauseScreen();
         }
 
         protected override void UnloadContent()
@@ -57,21 +64,25 @@ namespace Spring
             //if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 //Exit();
 
+            mouseState = Mouse.GetState();
+            keyboardState = Keyboard.GetState();
+            gamePadState = GamePad.GetState(PlayerIndex.One);
+
             switch (gameState)
             {
                 case GameState.Menu:
                     {
-                        //menuScreen.Update(mouseState, keyboardState, gamePadState);
+                        menuScreen.Update(mouseState, keyboardState, gamePadState);
                         break;
                     }
                 case GameState.Game:
                     {
-                        //gameScreen.Update(mouseState, keyboardState, gamePadState);
+                        gameScreen.Update(mouseState, keyboardState, gamePadState);
                         break;
                     }
                 case GameState.Pause:
                     {
-                        //pauseScreen.Update(mouseState, keyboardState, gamePadState);
+                        pauseScreen.Update(mouseState, keyboardState, gamePadState);
                         break;
                     }
             }
@@ -91,17 +102,17 @@ namespace Spring
             {
                 case GameState.Menu:
                     {
-                        //menuScreen.Draw(spriteBatch);
+                        menuScreen.Draw(spriteBatch);
                         break;
                     }
                 case GameState.Game:
                     {
-                        //gameScreen.Draw(spriteBatch);
+                        gameScreen.Draw(spriteBatch);
                         break;
                     }
                 case GameState.Pause:
                     {
-                        //pauseScreen.Draw(spriteBatch);
+                        pauseScreen.Draw(spriteBatch);
                         break;
                     }
             }
