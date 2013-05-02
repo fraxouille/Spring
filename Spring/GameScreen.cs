@@ -12,24 +12,28 @@ namespace Spring
     {
         //Properties
         private Player player;
+        private Ground ground;
 
         //Constructor
         public GameScreen()
         {
             player = new Player();
+            ground = new Ground();
         }
 
         //Update
         public void Update(MouseState mouse, KeyboardState keyboard, GamePadState gamePadState)
         {
-            player.update(mouse, keyboard, gamePadState);
+            player.Update(mouse, keyboard, gamePadState);
         }
 
         //Draw
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.GraphicsDevice.Clear(Color.Yellow);
-            player.draw(spriteBatch);
+            ground.DrawBackground(spriteBatch);
+            player.Draw(spriteBatch);
+            ground.DrawForeground(spriteBatch);
         }
 
 

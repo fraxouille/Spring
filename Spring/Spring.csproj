@@ -36,6 +36,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="GameScreen.cs" />
+    <Compile Include="Ground.cs" />
+    <Compile Include="Layer.cs" />
     <Compile Include="MenuScreen.cs" />
     <Compile Include="PauseScreen.cs" />
     <Compile Include="Player.cs" />

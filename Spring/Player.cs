@@ -24,13 +24,16 @@ namespace Spring
         }
         
         //Update
-        public void update(MouseState mouse, KeyboardState keyboard, GamePadState gamePadState)
+        public void Update(MouseState mouse, KeyboardState keyboard, GamePadState gamePadState)
         {
-            x++; y++;
+            if (keyboard.IsKeyDown(Keys.Up)) y--;
+            if (keyboard.IsKeyDown(Keys.Down)) y++;
+            if (keyboard.IsKeyDown(Keys.Left)) x--;
+            if (keyboard.IsKeyDown(Keys.Right)) x++;
         }
 
         //Draw
-        public void draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(texture, new Rectangle(x, y, width, height), Color.White);
         }
