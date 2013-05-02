@@ -22,19 +22,19 @@ namespace Spring
         SpriteBatch spriteBatch;
 
         public static GameState gameState;
-        MenuScreen menuScreen;
-        GameScreen gameScreen;
-        PauseScreen pauseScreen;
+        private MenuScreen menuScreen;
+        private GameScreen gameScreen;
+        private PauseScreen pauseScreen;
 
-        MouseState mouseState;
-        KeyboardState keyboardState;
-        GamePadState gamePadState;
+        private MouseState mouseState;
+        private KeyboardState keyboardState;
+        private GamePadState gamePadState;
 
 
         public SpringGame() : base()
         {
             graphics = new GraphicsDeviceManager(this);
-            //Content.RootDirectory = "Content";
+            Content.RootDirectory = "Content";
         }
 
         protected override void Initialize()
@@ -45,9 +45,9 @@ namespace Spring
         protected override void LoadContent()
         {
             spriteBatch = new SpriteBatch(GraphicsDevice);
-            Ressources.LoadContent(Content);
+            Res.LoadContent(Content);
 
-            gameState = GameState.Pause;
+            gameState = GameState.Game;
             menuScreen = new MenuScreen();
             gameScreen = new GameScreen();
             pauseScreen = new PauseScreen();

@@ -7,13 +7,13 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Spring
 {
-    class Ressources
+    static class Res
     {
         public static Texture2D playerTexture;
 
         public static void LoadContent(ContentManager content)
         {
-            //playerTexture = content.Load<Texture2D>("gfx/hero_spritesheet");
+            playerTexture = content.Load<Texture2D>("gfx/hero_spritesheet");
 
         }
 

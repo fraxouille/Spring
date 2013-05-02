@@ -11,24 +11,25 @@ namespace Spring
     class GameScreen
     {
         //Properties
-
+        private Player player;
 
         //Constructor
         public GameScreen()
         {
-
+            player = new Player();
         }
 
         //Update
         public void Update(MouseState mouse, KeyboardState keyboard, GamePadState gamePadState)
         {
-
+            player.update(mouse, keyboard, gamePadState);
         }
 
         //Draw
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.GraphicsDevice.Clear(Color.Yellow);
+            player.draw(spriteBatch);
         }
 
 

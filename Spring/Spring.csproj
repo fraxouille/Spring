@@ -38,9 +38,10 @@
     <Compile Include="GameScreen.cs" />
     <Compile Include="MenuScreen.cs" />
     <Compile Include="PauseScreen.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Ressources.cs" />
+    <Compile Include="Res.cs" />
     <Compile Include="SpringGame.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,11 +61,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\gfx\hero_spritesheet.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\snd\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\gfx\hero_spritesheet.xnb">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
