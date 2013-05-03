@@ -44,6 +44,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Res.cs" />
+    <Compile Include="Settings.cs" />
     <Compile Include="SpringGame.cs" />
   </ItemGroup>
   <ItemGroup>
