@@ -10,11 +10,12 @@ namespace Spring
     static class Res
     {
         public static Texture2D playerTexture;
+        public static Texture2D beachTexture;
 
         public static void LoadContent(ContentManager content)
         {
             playerTexture = content.Load<Texture2D>("gfx/hero_spritesheet");
-
+            beachTexture = content.Load<Texture2D>("gfx/spritesheet_beach");
         }
 
     }
