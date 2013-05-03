@@ -19,7 +19,17 @@ namespace Spring
         }
 
         //Update
-        public void Update(MouseState mouse, KeyboardState keyboard, GamePadState gamePadState)
+        public void Update(MouseState mouse)
+        {
+
+        }
+
+        public void Update(KeyboardState keyboard)
+        {
+
+        }
+
+        public void Update(GamePadState gamePadState)
         {
 
         }

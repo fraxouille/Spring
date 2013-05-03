@@ -24,7 +24,27 @@ namespace Spring
         //Update
         public void Update(MouseState mouse, KeyboardState keyboard, GamePadState gamePadState)
         {
-            player.Update(mouse, keyboard, gamePadState);
+            switch (Settings.inputType)
+            {
+                case (Settings.InputType.Keyboard):
+                    {
+                        player.Update(keyboard);
+                        ground.Update(keyboard);
+                        break;
+                    }
+                case (Settings.InputType.Pad):
+                    {
+                        player.Update(gamePadState);
+                        ground.Update(gamePadState);
+                        break;
+                    }
+                case (Settings.InputType.Mouse):
+                    {
+                        player.Update(mouse);
+                        ground.Update(mouse);
+                        break;
+                    }
+            }
         }
 
         //Draw
