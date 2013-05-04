@@ -10,12 +10,14 @@ namespace Spring
     class Ground
     {
         //Properties
-        Layer[] layers;
+        int id, height, width;
+        string name, spriteSheet;
+        int[] layer0;
 
         //Constructor
         public Ground()
         {
-            layers = new Layer[5];
+            
         }
 
         //Update

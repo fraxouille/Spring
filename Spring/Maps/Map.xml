@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+  <maps>
+    <map>
+      <id>0</id>
+      <name>Toto</name>
+      <height>4</height>
+      <widht>6</widht>
+      <layers>
+        <layer>
+          <layerName>0</layerName>
+          <spritesheet>spritesheet_beach</spritesheet>
+          <data>0,0,0,0,0,0/0,0,0,0,0,0/0,0,1,1,1,0/0,1,2,1,1,0</data>
+        </layer>
+      </layers>
+    </map>
+  </maps>

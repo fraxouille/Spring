@@ -37,7 +37,6 @@
   <ItemGroup>
     <Compile Include="GameScreen.cs" />
     <Compile Include="Ground.cs" />
-    <Compile Include="Layer.cs" />
     <Compile Include="MenuScreen.cs" />
     <Compile Include="PauseScreen.cs" />
     <Compile Include="Player.cs" />
@@ -46,6 +45,7 @@
     <Compile Include="Res.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="SpringGame.cs" />
+    <Compile Include="XMLParser.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="OpenTK">
@@ -65,7 +65,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
-    <Content Include="Map.xml" />
+    <Content Include="Maps\Map.xml">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\snd\" />
