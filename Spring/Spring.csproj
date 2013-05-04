@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icon.ico" />
+    <Content Include="Map.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Content\snd\" />
