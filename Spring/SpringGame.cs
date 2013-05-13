@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework.GamerServices;
 
 namespace Spring
 {
+    //Main class
     public enum GameState
     {
         Menu, Game, Pause
@@ -21,7 +22,9 @@ namespace Spring
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        //*******GameState*******//
         public static GameState gameState;
+        
         private MenuScreen menuScreen;
         private GameScreen gameScreen;
         private PauseScreen pauseScreen;

@@ -36,7 +36,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="GameScreen.cs" />
-    <Compile Include="Ground.cs" />
+    <Compile Include="Maps\Ground.cs" />
+    <Compile Include="Maps\Layer.cs" />
     <Compile Include="MenuScreen.cs" />
     <Compile Include="PauseScreen.cs" />
     <Compile Include="Player.cs" />
@@ -57,6 +58,7 @@
     <Reference Include="Lidgren.Network">
       <HintPath>C:\Program Files (x86)\MSBuild\..\MonoGame\v3.0\Assemblies\WindowsGL\Lidgren.Network.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="Tao.Sdl">
       <HintPath>C:\Program Files (x86)\MSBuild\..\MonoGame\v3.0\Assemblies\WindowsGL\Tao.Sdl.dll</HintPath>
     </Reference>
@@ -67,6 +69,7 @@
     <Content Include="Icon.ico" />
     <Content Include="Maps\Map.xml">
       <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
   <ItemGroup>

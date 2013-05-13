@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Spring
 {
+    //Settings class
     static class Settings
     {
         public enum InputType

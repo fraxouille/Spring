@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework;
 
 namespace Spring
 {
+    // Pause Screen
     class PauseScreen
     {
         //Properties

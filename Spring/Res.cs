@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Spring
 {
+    //All ressources must be declared here
     static class Res
     {
         public static Texture2D playerTexture;

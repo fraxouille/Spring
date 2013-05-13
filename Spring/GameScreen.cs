@@ -8,20 +8,23 @@ using Microsoft.Xna.Framework;
 
 namespace Spring
 {
+    // Screen of the main game
     class GameScreen
     {
         //Properties
         private Player player;
         private Ground ground;
+        string mapFileName = "Map";
 
         //Constructor
         public GameScreen()
         {
             player = new Player();
-            ground = new Ground();
+            ground = new Ground(mapFileName);
         }
 
         //Update
+        //Only calls sub-methods with right inputs
         public void Update(MouseState mouse, KeyboardState keyboard, GamePadState gamePadState)
         {
             switch (Settings.inputType)
@@ -48,6 +51,7 @@ namespace Spring
         }
 
         //Draw
+        //Only calls sub-methods
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.GraphicsDevice.Clear(Color.Yellow);

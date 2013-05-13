@@ -7,17 +7,28 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Spring
 {
+    //Background class
     class Ground
     {
         //Properties
-        int id, height, width;
-        string name, spriteSheet;
-        int[] layer0;
+        public int id, height, width, layersNumber;
+        public string name, spriteSheet;
+        public Layer[] layers;
 
         //Constructor
         public Ground()
         {
-            
+
+        }
+
+        public Ground(String mapFileName)
+        {
+            Ground g = XMLParser.XMLReader(mapFileName);
+            this.id = g.id;
+            this.name = g.name;
+            this.height = g.height;
+            this.width = g.width;
+            this.layers = g.layers;
         }
 
         //Update

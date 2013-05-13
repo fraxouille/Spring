@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Spring
 {
+    //Screen of the main menu
     public class MenuScreen
     {
         //Properties
